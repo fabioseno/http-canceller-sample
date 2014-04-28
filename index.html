@@ -1,0 +1,35 @@
+<!doctype html>
+<html ng-app="core">
+    
+    <head>
+        <meta charset="UTF-8">
+        <title></title>
+        <style>
+            ul {
+                list-style-type: none;
+            }
+            
+            ul li {
+                font-weight: bold;
+            }
+        </style>
+    </head>
+    
+    <body data-ng-controller="sampleController">
+        
+        <ul>
+            <li data-ng-repeat="request in requests" data-ng-bind="request.message" data-ng-style="{'color': request.color }"></li>
+        </ul>
+        
+        <input type="button" value="Fire requests" data-ng-click="fire()">
+        <input type="button" value="Cancel requests" data-ng-click="cancel()">
+        <span data-ng-bind="output"></span>
+        
+        <!-- AngularJS libs -->
+        <script src="lib/angular/angular.js"></script>
+        
+        <!-- App components -->
+        <script type="text/javascript" src="app.js"></script>
+        
+    </body>
+</html>
